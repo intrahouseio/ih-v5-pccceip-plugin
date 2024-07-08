@@ -1,0 +1,6 @@
+{
+    "id":"pccceip",
+    "description":"Allen Bradley SLC-5/PLC-5/Micrologix",
+    "cross":true,
+    "version":"5.0.1"
+}

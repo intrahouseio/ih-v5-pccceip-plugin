@@ -1,0 +1,27 @@
+{
+  "name": "nodepccc",
+  "description": "Routine to communicate with Allen-Bradley PLCs",
+  "version": "0.1.17",
+  "author": {
+    "name": "Dana Moffit",
+    "email": "nodejsplc@gmail.com"
+  },
+  "keywords": [
+    "Allen",
+    "Bradley",
+    "PLC",
+    "Micrologix",
+    "SLC",
+    "CompactLogix",
+    "ControlLogix",
+    "PCCC",
+    "Ethernet/IP"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plcpeople/nodepccc"
+  },
+  "main": "nodePCCC.js",
+  "license": "MIT",
+  "engine": "node 0.10.x"
+}
