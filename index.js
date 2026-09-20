@@ -24,12 +24,10 @@ let channels = {};
     plugin.log('Received params data:' + util.inspect(plugin.params.data), 1);
 
     plugin.channels.data = await plugin.channels.get();
-    plugin.channels.data.forEach(item => {
-      channels[item.chan] = item.id;
-    })
     plugin.log('Received channels data: ' + util.inspect(plugin.channels.data), 1);
 
     client.init(plugin);
+    channels = client.addItems(plugin.channels.data);
     await client.connect();
     plugin.log('Connected!', 1);
 
@@ -94,11 +92,11 @@ async function read() {
         value = data[key];
         if (plugin.params.data.sendChanges) {
           if (chanValues[key].value != value) {
-            res.push({ id: channels[key], value: value, chstatus: 0, chan: key });
+            res.push({ id: key, value: value, chstatus: 0, title: channels[key] });
             chanValues[key].value = value;
           }
         } else {
-          res.push({ id: channels[key], value: value, chstatus: 0, chan: key });
+          res.push({ id: key, value: value, chstatus: 0, title: channels[key] });
         }
       });
       if (res.length > 0) plugin.sendData(res);
